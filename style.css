@@ -1,3 +1,8 @@
+
+
+
+
+
 *{
     margin: 0px;
   padding:  0px;
@@ -7,11 +12,19 @@
    scroll-behavior: smooth;
 }
 body{
-    background-image: url(./images/4.jpg);
+
+    background-image: url(./images/9.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%  100%;
 }
+#particles-js{
+    width: 100%;
+    height: 15vh;
+}
+
+
+
 
 nav{
     background-color: black;
@@ -69,7 +82,9 @@ li a:hover{
     margin-right: 20px;
     cursor: pointer;
     display: none;
-
+}
+#check{
+    display: none;
 }
 .checkbox{
     display: none;
@@ -100,7 +115,7 @@ li a:hover{
         width: 60%;
         height: 50vh;
         background-color: black;
-        top:  50px; right: 0%;
+        top:  50px; right: -100%;
         padding: 20px;
         transition: all .5s;
     }
@@ -128,7 +143,7 @@ li a:hover{
     
 }
 .home{
-    padding: 220px 100px;
+    padding: 200px 100px;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -184,8 +199,8 @@ li a:hover{
     border-radius: 50%;
     box-shadow: 0px 0px 30px aqua;
     filter: brightness(1.1);
-    transition:    ease-in-out;
-    animation: animate 2.5s ease-in forwards infinite;
+    transition: .4s ease-in-out;
+    animation: animate  2.5s ease-in-out forwards infinite;
 }
 .home img:hover{
     box-shadow: 0px 0px 50px #ED2279;
@@ -277,7 +292,7 @@ li a:hover{
     font-size: 20px;
     padding: 60px;
 }
-/*service*/
+/*skills*/
 h1.skills{
     margin-top: 10rem;
     color: white;
@@ -333,10 +348,11 @@ h1.skills span{
     border-radius: 10px;
     width: 100;
     height: 5px;
-    background-color: rgb(55, 224, 103);
+    background-color: rgb(208, 19, 164);
     animation: animate 1s cubic-bezier(1,0,0,5.1)forwards;
     transform: scaleX(0);
     transform-origin: left;
+
 }
 @keyframes animate{
     100%{
@@ -345,12 +361,13 @@ h1.skills span{
 }
 .Technical-bars .bar .progress-line span{
     height: 100%;
-    background-color: rgb(208, 19, 164);
+    background-color:  rgb(55, 224, 103);
     position: absolute;
     border-radius: 10px;
     animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
     transform: scaleX(0);
     transform-origin: left;
+ 
 }
 .progress-line.html span{
     width: 90%;
@@ -364,9 +381,50 @@ h1.skills span{
 .progress-line.python span{
     width: 85%;
 }
+.progress-line span::after{
+    position: absolute;
+    padding: 1px 8px;
+    background-color: black;
+    color:white;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
 
-
-
+}
+.progress-line.html span::after{
+    content: "90%";
+}
+.progress-line.css span::after{
+    content: "80%";
+}
+.progress-line.javascript span::after{
+    content: "50%";
+}
+.progress-line.python span::after{
+    content: "85%";
+}
+.progress-line span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: black;
+    top: -10px;
+    right: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+@keyframes showText{
+    100%{
+        opacity: 1;
+    }
+}
 
 
 
